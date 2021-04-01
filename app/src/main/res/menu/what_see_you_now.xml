@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/ProximaVer"
+        android:title="Proxima a Ver"
+        android:icon="@drawable/ic_baseline_ver_24"
+     />
+    <item android:id="@+id/NoVer"
+        android:title="No ver"
+        android:icon="@drawable/ic_baseline_no_ver_24"
+        />
+    <item android:id="@+id/LogOut"
+        android:title="Salir"
+        android:icon="@drawable/ic_baseline_logout_24"
+        />
+</menu>

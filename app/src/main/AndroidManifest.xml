@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.whatyouseenow">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_whatseeyounow"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_whatseeyounow"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".No_ver"
+            android:label="No ver"
+            android:textStyle="italic"
+            android:theme="@style/Theme.WhatYouSeeNow"></activity>
+        <activity
+            android:name=".Proxima_a_ver"
+            android:label="Proximas a ver"
+            android:textStyle="italic"
+            android:theme="@style/Theme.WhatYouSeeNow" />
+        <activity android:name=".Registrarse" />
+        <activity
+            android:name=".Home"
+            android:textStyle="italic"
+            android:theme="@style/Theme.WhatYouSeeNow" />
+        <activity android:name=".InicioSesion">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
