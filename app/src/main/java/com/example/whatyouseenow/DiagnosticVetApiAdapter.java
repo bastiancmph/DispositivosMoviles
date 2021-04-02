@@ -20,8 +20,7 @@ public class DiagnosticVetApiAdapter {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
 
-        String baseUrl = "\n" +
-                "https://api.themoviedb.org/3/trending/movie/day?api_key=a804b0da37710e733d1d87cf53bb816b";
+        String baseUrl = "https://api.themoviedb.org/3/";
 
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()

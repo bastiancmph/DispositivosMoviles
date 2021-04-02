@@ -5,16 +5,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class Home extends AppCompatActivity {
+import java.io.IOException;
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class Home extends AppCompatActivity implements Callback<PeliculasResponse> {
+
+
+private ArrayList<Result> peliculasencontradas;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Call<PeliculasResponse> call = DiagnosticVetApiAdapter.getApiService().getPeliculasResponse();
+        call.enqueue(this);
+
+
     }
 
     @Override
@@ -42,7 +62,17 @@ public class Home extends AppCompatActivity {
            Intent Nover = new Intent(this, No_ver.class);
            Nover.addFlags(Nover.FLAG_ACTIVITY_CLEAR_TOP | Nover.FLAG_ACTIVITY_CLEAR_TASK);
            startActivityForResult(Nover,0);
-       }/*
+       }
+
+
+
+
+
+        /*
+
+
+
+
        switch (item.getItemId()){
             case R.id.ProximaVer:
                 //Toast.makeText(this, "proxima ver", Toast.LENGTH_LONG).show();
@@ -61,5 +91,24 @@ public class Home extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }*/
        return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onResponse(Call<PeliculasResponse> call, Response<PeliculasResponse> response) {
+
+        if (response.isSuccessful()){
+            Log.d("ssss","FUNCIONO");
+        }
+    }
+
+    @Override
+    public void onFailure(Call<PeliculasResponse> call, Throwable t) {
+        Log.d("ssss","NONAS FUNCIONO");
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
