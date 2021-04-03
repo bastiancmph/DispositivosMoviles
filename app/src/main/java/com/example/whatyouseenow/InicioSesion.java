@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class InicioSesion extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class InicioSesion extends AppCompatActivity {
         Button registarse = (Button) findViewById(R.id.registrarse);
         EditText username = (EditText)findViewById(R.id.editTextTextPersonName);
         EditText password = (EditText)findViewById(R.id.editTextTextPassword);
+
 
         //accion del boton que te inicia secion
         entrar.setOnClickListener(new View.OnClickListener() {

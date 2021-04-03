@@ -9,12 +9,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,9 +30,13 @@ import retrofit2.Response;
 public class Home extends AppCompatActivity implements Callback<PeliculasResponse> {
 
 
-private ArrayList<Result> peliculasencontradas;
+private List<Result> peliculasencontradas;
 
     ImageView imagen;
+
+    int index = 0;
+
+    private boolean cargo = false;
 
 
 
@@ -42,10 +51,25 @@ private ArrayList<Result> peliculasencontradas;
 
 
         imagen = findViewById(R.id.tarimg);
-        Picasso.get()
-                .load("https://cnnespanol.cnn.com/wp-content/uploads/2020/07/200703104728-labrador-retriever-stock-super-169.jpg")
-                .error(R.mipmap.ic_launcher_round)
-                .into(imagen);
+        TextView titulo = (TextView)findViewById(R.id.info_text);
+
+        Button entrar = (Button) findViewById(R.id.nextt);
+        entrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cargo){
+                    titulo.setText(peliculasencontradas.get(index).getTitle());
+                    Picasso.get()
+                            .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
+                            .error(R.mipmap.ic_launcher_round)
+                            //.resize(200,200)
+                            .into(imagen);
+                    index++;
+                    Log.d("index", ""+index);
+                }
+            }
+        });
+
 
 
     }
@@ -56,6 +80,8 @@ private ArrayList<Result> peliculasencontradas;
         inflater.inflate(R.menu.what_see_you_now, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+
 
 
     @Override
@@ -111,6 +137,17 @@ private ArrayList<Result> peliculasencontradas;
     public void onResponse(Call<PeliculasResponse> call, Response<PeliculasResponse> response) {
 
         if (response.isSuccessful()){
+            peliculasencontradas = response.body().getResults();
+
+
+
+
+            Log.d("ssa","dsd " + peliculasencontradas.get(index).getPosterPath());
+
+            cargo = true;
+
+
+
             Log.d("ssss","FUNCIONO");
 
 
@@ -120,6 +157,7 @@ private ArrayList<Result> peliculasencontradas;
     @Override
     public void onFailure(Call<PeliculasResponse> call, Throwable t) {
         Log.d("ssss","NONAS FUNCIONO");
+        cargo = false;
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Result {
     private String originalTitle;
     private String overview;
     private double popularity;
-    private String posterPath;
+    private String poster_path;
     private String releaseDate;
     private String title;
     private boolean video;
@@ -86,11 +86,11 @@ public class Result {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        return poster_path;
     }
 
     public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+        this.poster_path = posterPath;
     }
 
     public String getReleaseDate() {

@@ -19,14 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageView
-        android:id="@+id/tarimg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-
-
-        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -41,15 +33,34 @@
         tools:ignore="MissingConstraints">
 
 
-
-
-
-
-        <TextView
-            android:id="@+id/info_text"
-            android:layout_width="335dp"
+        <ImageView
+            android:id="@+id/tarimg"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible" />
+
+
+            />
+
+
+
     </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/nextt"
+        android:layout_width="191dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="464dp"
+        android:text="Button"
+        app:layout_constraintTop_toTopOf="@+id/card_view"
+        tools:layout_editor_absoluteX="110dp" />
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="179dp"
+        android:layout_height="52dp"
+        android:text="BLANK"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="61dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
