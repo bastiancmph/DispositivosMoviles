@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,11 +20,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
+
 public class Home extends AppCompatActivity implements Callback<PeliculasResponse> {
 
 
 private ArrayList<Result> peliculasencontradas;
 
+    ImageView imagen;
 
 
 
@@ -33,6 +39,13 @@ private ArrayList<Result> peliculasencontradas;
 
         Call<PeliculasResponse> call = DiagnosticVetApiAdapter.getApiService().getPeliculasResponse();
         call.enqueue(this);
+
+
+        imagen = findViewById(R.id.tarimg);
+        Picasso.get()
+                .load("https://cnnespanol.cnn.com/wp-content/uploads/2020/07/200703104728-labrador-retriever-stock-super-169.jpg")
+                .error(R.mipmap.ic_launcher_round)
+                .into(imagen);
 
 
     }
@@ -99,6 +112,8 @@ private ArrayList<Result> peliculasencontradas;
 
         if (response.isSuccessful()){
             Log.d("ssss","FUNCIONO");
+
+
         }
     }
 
