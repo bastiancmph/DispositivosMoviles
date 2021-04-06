@@ -61,10 +61,10 @@ private List<Result> peliculasencontradas;
                     titulo.setText(peliculasencontradas.get(index).getTitle());
                     Picasso.get()
                             .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
-                            .error(R.mipmap.ic_launcher_round)
-                            //.resize(200,200)
+                            //.resize(1080,2160)
                             .into(imagen);
                     index++;
+
                     Log.d("index", ""+index);
                 }
             }
@@ -142,7 +142,7 @@ private List<Result> peliculasencontradas;
 
 
 
-            Log.d("ssa","dsd " + peliculasencontradas.get(index).getPosterPath());
+            Log.d("ssa","dsd " + peliculasencontradas.size());
 
             cargo = true;
 

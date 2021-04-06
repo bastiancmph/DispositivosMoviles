@@ -23,32 +23,35 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="307dp"
-        android:layout_height="523dp"
+        android:layout_width="390dp"
+        android:layout_height="787dp"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintVertical_bias="0.498"
         card_view:cardCornerRadius="15dp"
-        tools:ignore="MissingConstraints"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
 
-        >
+        card_view:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
 
         <ImageView
 
             android:id="@+id/tarimg"
-            android:layout_width="307dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="775dp"
             android:scaleType="centerCrop"
 
 
-            />
+            tools:layout_conversion_absoluteHeight="0dp"
+            tools:layout_conversion_absoluteWidth="0dp"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="-1dp" />
 
 
     </androidx.cardview.widget.CardView>
-
 
     <Button
         android:id="@+id/nextt"
@@ -75,23 +78,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/info_text"
-        android:layout_width="348dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="481dp"
+        android:layout_height="144dp"
         android:fontFamily="sans-serif-medium"
         android:text="BLANK"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:flow_horizontalAlign="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_conversion_absoluteHeight="94dp"
+        tools:layout_conversion_absoluteWidth="498dp"
+        tools:layout_editor_absoluteX="-10dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
