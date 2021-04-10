@@ -73,43 +73,15 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         android:background="@drawable/boton_redondo_trans"/>
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrarse"
-        app:srcCompat="@drawable/facebookk"
-        android:background="@drawable/botones_sociales"/>
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrarse"
-        app:srcCompat="@drawable/insta"
-        android:background="@drawable/botones_sociales"/>
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:scaleType="fitCenter"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="156dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/registrarse"
-        app:srcCompat="@drawable/twitterr"
-        android:background="@drawable/botones_sociales"/>
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarse" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

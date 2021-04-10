@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "606323302193",
+    "project_id": "whatseeyounow-7e542",
+    "storage_bucket": "whatseeyounow-7e542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606323302193:android:94d5df9c9e05880b575a10",
+        "android_client_info": {
+          "package_name": "com.example.whatyouseenow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606323302193-adt2tmhr3kr5klae9ktr2qtmrua6se43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFKAT3cSUXgRi5O-LP9uDhU1NYMOtEUS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606323302193-adt2tmhr3kr5klae9ktr2qtmrua6se43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
