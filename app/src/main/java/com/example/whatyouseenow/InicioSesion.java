@@ -30,7 +30,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class InicioSesion extends AppCompatActivity {
 
-    private int RC_SIGN_IN = 123;
+    private int RC_SIGN_IN = 0;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
 
@@ -92,6 +92,7 @@ public class InicioSesion extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w("FCINO", "Google sign in failed", e);
+
             }
         }
     }
