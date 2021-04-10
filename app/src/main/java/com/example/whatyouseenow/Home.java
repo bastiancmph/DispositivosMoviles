@@ -54,16 +54,33 @@ private List<Result> peliculasencontradas;
         TextView titulo = (TextView)findViewById(R.id.info_text);
 
         Button entrar = (Button) findViewById(R.id.nextt);
+        Button anterior= (Button) findViewById(R.id.prevv);
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cargo){
+                if (cargo && peliculasencontradas.size()>index){
                     titulo.setText(peliculasencontradas.get(index).getTitle());
                     Picasso.get()
                             .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
                             //.resize(1080,2160)
                             .into(imagen);
                     index++;
+
+                    Log.d("index", ""+index);
+                }
+            }
+        });
+
+        anterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cargo && index>0){
+                    titulo.setText(peliculasencontradas.get(index).getTitle());
+                    Picasso.get()
+                            .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
+                            //.resize(1080,2160)
+                            .into(imagen);
+                    index--;
 
                     Log.d("index", ""+index);
                 }
