@@ -1,0 +1,26 @@
+com/example/whatyouseenow/No_ver.java
+ com.example.whatyouseenow.No_ver
+com/example/whatyouseenow/DiagnosticVetApiAdapter.java
+ com.example.whatyouseenow.DiagnosticVetApiAdapter
+com/example/whatyouseenow/PeliculasResponse.java
+ com.example.whatyouseenow.PeliculasResponse
+com/example/whatyouseenow/DiagnosticVetApiService.java
+ com.example.whatyouseenow.DiagnosticVetApiService
+com/example/whatyouseenow/Registrarse.java
+ com.example.whatyouseenow.Registrarse
+com/example/whatyouseenow/Result.java
+ com.example.whatyouseenow.Result
+com/example/whatyouseenow/BuildConfig.java
+ com.example.whatyouseenow.BuildConfig
+com/example/whatyouseenow/Proxima_a_ver.java
+ com.example.whatyouseenow.Proxima_a_ver
+com/example/whatyouseenow/InicioSesion.java
+ com.example.whatyouseenow.InicioSesion
+ com.example.whatyouseenow.InicioSesion$1
+ com.example.whatyouseenow.InicioSesion$2
+ com.example.whatyouseenow.InicioSesion$3
+ com.example.whatyouseenow.InicioSesion$4
+com/example/whatyouseenow/Home.java
+ com.example.whatyouseenow.Home
+ com.example.whatyouseenow.Home$1
+ com.example.whatyouseenow.Home$2
