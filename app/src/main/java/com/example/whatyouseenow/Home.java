@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -29,22 +30,20 @@ import retrofit2.Response;
 
 public class Home extends AppCompatActivity implements Callback<PeliculasResponse> {
 
+private FirebaseAuth mAuth;
 
 private List<Result> peliculasencontradas;
-
     ImageView imagen;
-
     int index = 0;
-
     private boolean cargo = false;
-
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Call<PeliculasResponse> call = DiagnosticVetApiAdapter.getApiService().getPeliculasResponse();
         call.enqueue(this);
@@ -71,6 +70,7 @@ private List<Result> peliculasencontradas;
             }
         });
 
+
         anterior.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +86,7 @@ private List<Result> peliculasencontradas;
                 }
             }
         });
+
 
 
 
@@ -110,9 +111,11 @@ private List<Result> peliculasencontradas;
             startActivityForResult(proxima,0);
         }
         else if (item.getItemId()== R.id.LogOut){
+            mAuth.signOut();
             Intent salir = new Intent(this, InicioSesion.class);
             salir.addFlags(salir.FLAG_ACTIVITY_CLEAR_TOP | salir.FLAG_ACTIVITY_CLEAR_TASK);
             startActivityForResult(salir,0);
+            finish();
         }
         else if(item.getItemId()== R.id.NoVer){
            Intent Nover = new Intent(this, No_ver.class);
@@ -156,18 +159,9 @@ private List<Result> peliculasencontradas;
         if (response.isSuccessful()){
             peliculasencontradas = response.body().getResults();
 
-
-
-
             Log.d("ssa","dsd " + peliculasencontradas.size());
-
             cargo = true;
-
-
-
             Log.d("ssss","FUNCIONO");
-
-
         }
     }
 

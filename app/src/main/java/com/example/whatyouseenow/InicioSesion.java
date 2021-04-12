@@ -33,6 +33,8 @@ public class InicioSesion extends AppCompatActivity {
     private int RC_SIGN_IN = 0;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
+    private String email = "";
+    private  String password = "";
 
     @Override
     protected void onStart() {
@@ -119,9 +121,8 @@ public class InicioSesion extends AppCompatActivity {
                 });
     }
 
-
     @Override
-            protected void onCreate (Bundle savedInstanceState){
+    protected void onCreate (Bundle savedInstanceState){
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_iniciosesion);
 
@@ -129,7 +130,7 @@ public class InicioSesion extends AppCompatActivity {
                 Button entrar = (Button) findViewById(R.id.login);
                 Button registarse = (Button) findViewById(R.id.registrarse);
                 EditText username = (EditText) findViewById(R.id.editTextTextPersonName);
-                EditText password = (EditText) findViewById(R.id.editTextTextPassword);
+                EditText passwordd = (EditText) findViewById(R.id.editTextTextPassword);
                 SignInButton signInButton = findViewById(R.id.sign_in_button);
                 signInButton.setSize(SignInButton.SIZE_STANDARD);
 
@@ -152,15 +153,17 @@ public class InicioSesion extends AppCompatActivity {
                 entrar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (username.getText().toString().equals("") && password.getText().toString().equals("")) {
-                            Toast.makeText(getApplicationContext(), "Entrando...", Toast.LENGTH_SHORT).show();
+                    email = username.getText().toString();
+                    password = passwordd.getText().toString();
 
-                            Intent intent = new Intent(v.getContext(), Home.class);
-                            startActivityForResult(intent, 0);
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                    if (!email.isEmpty() && !password.isEmpty()){
+                        loginUser();
+                    }
+                    else {
+                        Toast.makeText(InicioSesion.this, "complete los campos", Toast.LENGTH_SHORT).show();
+                    }
 
-                        }
+
                     }
                 });
                 //accion del boton que te envia a registrar
@@ -183,6 +186,20 @@ public class InicioSesion extends AppCompatActivity {
 
             }
 
+    private  void loginUser(){
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+               if (task.isSuccessful()){
+                   startActivity(new Intent(InicioSesion.this,Home.class));
+                   finish();
+               }
+               else{
+                   Toast.makeText(InicioSesion.this, "nos se pudo iniciar sesion, compruebe sus datos", Toast.LENGTH_SHORT).show();
+               }
+            }
+        });
+    }
 
 
 }

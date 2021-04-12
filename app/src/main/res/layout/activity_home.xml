@@ -50,6 +50,19 @@
             tools:layout_editor_absoluteX="-10dp"
             tools:layout_editor_absoluteY="-1dp" />
 
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="BLANK"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:layout_conversion_absoluteHeight="94dp"
+            tools:layout_conversion_absoluteWidth="498dp" />
+
 
     </androidx.cardview.widget.CardView>
 
@@ -79,20 +92,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/info_text"
-        android:layout_width="481dp"
-        android:layout_height="144dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="BLANK"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_conversion_absoluteHeight="94dp"
-        tools:layout_conversion_absoluteWidth="498dp"
-        tools:layout_editor_absoluteX="-10dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
