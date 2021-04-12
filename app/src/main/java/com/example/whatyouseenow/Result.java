@@ -1,5 +1,7 @@
 package com.example.whatyouseenow;
 
+import android.os.Parcelable;
+
 import java.util.List;
 
 import java.util.List;

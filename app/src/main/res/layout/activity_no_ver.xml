@@ -5,4 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#656565"
-    tools:context=".No_ver"/>
+    tools:context=".No_ver">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="183dp"
+        android:layout_height="136dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/google" />
+</androidx.constraintlayout.widget.ConstraintLayout>

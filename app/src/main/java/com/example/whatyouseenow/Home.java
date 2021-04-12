@@ -3,6 +3,7 @@ package com.example.whatyouseenow;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,7 @@ import retrofit2.Response;
 public class Home extends AppCompatActivity implements Callback<PeliculasResponse> {
 
 private FirebaseAuth mAuth;
+private ArrayList<Result> Arraylistnover = new ArrayList<Result>();
 
 
 private List<Result> peliculasencontradas;
@@ -38,12 +41,16 @@ private List<Result> peliculasencontradas;
     int index = 0;
     private boolean cargo = false;
 
+    @Override
+    public Context getApplicationContext() {
+        return super.getApplicationContext();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        getApplicationContext();
         mAuth = FirebaseAuth.getInstance();
 
         Call<PeliculasResponse> call = DiagnosticVetApiAdapter.getApiService().getPeliculasResponse();
@@ -55,19 +62,37 @@ private List<Result> peliculasencontradas;
 
         Button entrar = (Button) findViewById(R.id.nextt);
         Button anterior= (Button) findViewById(R.id.prevv);
+        ImageButton Nover= (ImageButton) findViewById(R.id.noverBo);
+
+
+
+
+
+
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (cargo && peliculasencontradas.size()>index){
+                    index++;
                     titulo.setText(peliculasencontradas.get(index).getTitle());
                     Picasso.get()
                             .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
                             //.resize(1080,2160)
                             .into(imagen);
-                    index++;
+
+
 
                     Log.d("index", ""+index);
                 }
+            }
+        });
+
+
+        Nover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Arraylistnover.add(peliculasencontradas.get(index));
+
             }
         });
 
@@ -78,17 +103,23 @@ private List<Result> peliculasencontradas;
             @Override
             public void onClick(View v) {
                 if (cargo && index>0){
+                    index--;
                     titulo.setText(peliculasencontradas.get(index).getTitle());
                     Picasso.get()
                             .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
                             //.resize(1080,2160)
                             .into(imagen);
-                    index--;
+
 
                     Log.d("index", ""+index);
                 }
             }
         });
+
+
+
+
+
 
 
 
@@ -121,9 +152,11 @@ private List<Result> peliculasencontradas;
             finish();
         }
         else if(item.getItemId()== R.id.NoVer){
-           Intent Nover = new Intent(this, No_ver.class);
-           Nover.addFlags(Nover.FLAG_ACTIVITY_CLEAR_TOP | Nover.FLAG_ACTIVITY_CLEAR_TASK);
-           startActivityForResult(Nover,0);
+           Intent Nover = new Intent(getApplicationContext(), No_ver.class);
+           Nover.putExtra("vector",Arraylistnover.get(index).getPosterPath());
+           //Nover.addFlags(Nover.FLAG_ACTIVITY_CLEAR_TOP | Nover.FLAG_ACTIVITY_CLEAR_TASK);
+
+           startActivity(Nover);
        }
 
 
@@ -162,9 +195,16 @@ private List<Result> peliculasencontradas;
         if (response.isSuccessful()){
             peliculasencontradas = response.body().getResults();
 
+            Picasso.get()
+                    .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(0).getPosterPath())
+                    //.resize(1080,2160)
+                    .into(imagen);
+
             Log.d("ssa","dsd " + peliculasencontradas.size());
             cargo = true;
             Log.d("ssss","FUNCIONO");
+
+
         }
     }
 

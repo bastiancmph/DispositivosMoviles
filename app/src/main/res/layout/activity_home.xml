@@ -81,7 +81,7 @@
         tools:layout_conversion_absoluteWidth="498dp" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/noverBo"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="84dp"
@@ -92,14 +92,14 @@
         card_view:srcCompat="@drawable/ic_baseline_no_ver_24" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/Vermastarde"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/botones_sociales"
         app:layout_constraintBottom_toTopOf="@+id/nextt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/noverBo"
         card_view:srcCompat="@drawable/ic_baseline_ver_24" />
 
 
