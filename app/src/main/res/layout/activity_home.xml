@@ -42,6 +42,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/boton_redondo_trans"
+        android:textColor="@color/black"
         android:text="Anterior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +55,6 @@
         android:layout_width="441dp"
         android:layout_height="760dp"
         android:scaleType="centerCrop"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +79,28 @@
         app:layout_constraintVertical_bias="0.116"
         tools:layout_conversion_absoluteHeight="94dp"
         tools:layout_conversion_absoluteWidth="498dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/botones_sociales"
+        app:layout_constraintBottom_toTopOf="@+id/prevv"
+        app:layout_constraintStart_toStartOf="parent"
+        card_view:srcCompat="@drawable/ic_baseline_no_ver_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/botones_sociales"
+        app:layout_constraintBottom_toTopOf="@+id/nextt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        card_view:srcCompat="@drawable/ic_baseline_ver_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
