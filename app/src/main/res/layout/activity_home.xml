@@ -21,51 +21,6 @@
         app:layout_constraintTop_toTopOf="parent" />-->
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="390dp"
-        android:layout_height="787dp"
-        android:layout_gravity="center"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintVertical_bias="0.498"
-        card_view:cardCornerRadius="15dp"
-        card_view:layout_constraintBottom_toBottomOf="parent"
-        card_view:layout_constraintEnd_toEndOf="parent"
-        card_view:layout_constraintStart_toStartOf="parent"
-
-        card_view:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-
-        <ImageView
-
-            android:id="@+id/tarimg"
-            android:layout_width="match_parent"
-            android:layout_height="775dp"
-            android:scaleType="centerCrop"
-
-
-            tools:layout_conversion_absoluteHeight="0dp"
-            tools:layout_conversion_absoluteWidth="0dp"
-            tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="-1dp" />
-
-        <TextView
-            android:id="@+id/info_text"
-            android:layout_width="match_parent"
-            android:layout_height="94dp"
-            android:layout_marginTop="60dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="BLANK"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:layout_conversion_absoluteHeight="94dp"
-            tools:layout_conversion_absoluteWidth="498dp" />
-
-
-    </androidx.cardview.widget.CardView>
-
     <Button
         android:id="@+id/nextt"
         android:layout_width="125dp"
@@ -92,6 +47,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/tarimg"
+        android:layout_width="441dp"
+        android:layout_height="760dp"
+        android:scaleType="centerCrop"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="0dp"
+        tools:layout_conversion_absoluteWidth="0dp" />
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="BLANK"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116"
+        tools:layout_conversion_absoluteHeight="94dp"
+        tools:layout_conversion_absoluteWidth="498dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

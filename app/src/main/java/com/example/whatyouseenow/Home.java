@@ -32,6 +32,7 @@ public class Home extends AppCompatActivity implements Callback<PeliculasRespons
 
 private FirebaseAuth mAuth;
 
+
 private List<Result> peliculasencontradas;
     ImageView imagen;
     int index = 0;
@@ -69,6 +70,8 @@ private List<Result> peliculasencontradas;
                 }
             }
         });
+
+
 
 
         anterior.setOnClickListener(new View.OnClickListener() {
