@@ -1,9 +1,5 @@
 package com.example.whatyouseenow;
 
-import android.os.Parcelable;
-
-import java.util.List;
-
 import java.util.List;
 
 public class Result {
@@ -20,7 +16,7 @@ public class Result {
     private String releaseDate;
     private String title;
     private boolean video;
-    private double voteAverage;
+    private double vote_average;
     private int voteCount;
 
     public boolean isAdult() {
@@ -119,12 +115,12 @@ public class Result {
         this.video = video;
     }
 
-    public double getVoteAverage() {
-        return voteAverage;
+    public double getVote_average() {
+        return vote_average;
     }
 
-    public void setVoteAverage(double voteAverage) {
-        this.voteAverage = voteAverage;
+    public void setVote_average(double vote_average) {
+        this.vote_average = vote_average;
     }
 
     public int getVoteCount() {

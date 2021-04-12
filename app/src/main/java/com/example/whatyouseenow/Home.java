@@ -15,12 +15,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,10 +57,19 @@ private List<Result> peliculasencontradas;
 
         imagen = findViewById(R.id.tarimg);
         TextView titulo = (TextView)findViewById(R.id.info_text);
+        TextView puntuacion = (TextView)findViewById(R.id.puntuacion);
 
         Button entrar = (Button) findViewById(R.id.nextt);
         Button anterior= (Button) findViewById(R.id.prevv);
         ImageButton Nover= (ImageButton) findViewById(R.id.noverBo);
+
+        Nover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Arraylistnover.add(peliculasencontradas.get(index));
+
+            }
+        });
 
 
 
@@ -73,8 +80,11 @@ private List<Result> peliculasencontradas;
             @Override
             public void onClick(View v) {
                 if (cargo && peliculasencontradas.size()>index){
+
                     index++;
                     titulo.setText(peliculasencontradas.get(index).getTitle());
+                    System.out.println(String.valueOf(String.valueOf(peliculasencontradas.get(index).getVote_average())));
+                    puntuacion.setText(String.valueOf(peliculasencontradas.get(index).getVote_average()));
                     Picasso.get()
                             .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
                             //.resize(1080,2160)
@@ -105,13 +115,14 @@ private List<Result> peliculasencontradas;
                 if (cargo && index>0){
                     index--;
                     titulo.setText(peliculasencontradas.get(index).getTitle());
+                    puntuacion.setText(String.valueOf(peliculasencontradas.get(index).getVote_average()));
                     Picasso.get()
                             .load("https://image.tmdb.org/t/p/original/"+peliculasencontradas.get(index).getPosterPath())
                             //.resize(1080,2160)
                             .into(imagen);
 
 
-                    Log.d("index", ""+index);
+                    Log.d("index", ""+peliculasencontradas.get(index).getVote_average());
                 }
             }
         });
