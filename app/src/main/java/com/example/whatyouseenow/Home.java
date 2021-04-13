@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity implements Callback<PeliculasRespons
 
 private FirebaseAuth mAuth;
 private ArrayList<Result> Arraylistnover = new ArrayList<Result>();
-
+    private ArrayList<Result> Arraylistver = new ArrayList<Result>();
 
 private List<Result> peliculasencontradas;
     ImageView imagen;
@@ -62,12 +62,20 @@ private List<Result> peliculasencontradas;
         Button entrar = (Button) findViewById(R.id.nextt);
         Button anterior= (Button) findViewById(R.id.prevv);
         ImageButton Nover= (ImageButton) findViewById(R.id.noverBo);
+        ImageButton proxima = (ImageButton) findViewById(R.id.vermastarde) ;
 
         Nover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Arraylistnover.add(peliculasencontradas.get(index));
 
+            }
+        });
+
+        proxima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Arraylistver.add(peliculasencontradas.get(index));
             }
         });
 
@@ -152,7 +160,8 @@ private List<Result> peliculasencontradas;
 
        if(item.getItemId()== R.id.ProximaVer){
             Intent proxima = new Intent(this,Proxima_a_ver.class);
-            proxima.addFlags(proxima.FLAG_ACTIVITY_CLEAR_TOP | proxima.FLAG_ACTIVITY_CLEAR_TASK);
+            proxima.putExtra("vector1",Arraylistver.get(index).getPosterPath());
+           // proxima.addFlags(proxima.FLAG_ACTIVITY_CLEAR_TOP | proxima.FLAG_ACTIVITY_CLEAR_TASK);
             startActivityForResult(proxima,0);
         }
         else if (item.getItemId()== R.id.LogOut){
